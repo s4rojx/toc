@@ -2,7 +2,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 static int grow_dfa(DFA *dfa, int *capacity, int new_capacity) {
     StateSet *new_subsets;

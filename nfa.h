@@ -2,7 +2,6 @@
 #define NFA_H
 
 #include <stdint.h>
-#include <stdio.h>
 
 #define MAX_NFA_STATES 20
 #define MAX_ALPHABET 26
@@ -16,13 +15,11 @@ typedef struct {
     int start_state;
     StateSet accept_states;
 
-    /* transitions[state][symbol_index] is a set of destination states. */
     StateSet transitions[MAX_NFA_STATES][MAX_ALPHABET];
 } NFA;
 
 void nfa_init(NFA *nfa);
 int nfa_read_interactive(NFA *nfa);
-int nfa_read_file(NFA *nfa, const char *file_name);
 void nfa_print(const NFA *nfa);
 
 int nfa_symbol_index(const NFA *nfa, char symbol);

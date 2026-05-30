@@ -4,10 +4,9 @@ This project implements the subset construction algorithm to convert an NFA into
 
 ## Files
 
-- `main.c` - menu-driven user interface
+- `main.c` - main program
 - `nfa.h`, `nfa.c` - NFA data structure, input, and move function
 - `dfa.h`, `dfa.c` - subset construction and DFA output
-- `sample_ending_01.txt` - sample NFA that accepts binary strings ending with `01`
 - `Makefile`, `build.bat`, `run_sample.bat` - convenience build and run commands
 
 ## Limits
@@ -18,7 +17,7 @@ This project implements the subset construction algorithm to convert an NFA into
 
 The program uses bitmasks for state sets, so subset operations are fast and simple.
 
-## File Input Format
+## Manual Input Format
 
 ```text
 number_of_states
@@ -37,7 +36,7 @@ Each transition is written as `from symbol to`, for example `0 1 2`.
 
 ## Example: Strings Ending With `01`
 
-`sample_ending_01.txt` contains this NFA:
+Use this input example:
 
 ```text
 3
@@ -89,10 +88,20 @@ This NFA accepts strings over `{0,1}` that end with `01`.
    .\build.bat
    ```
 
-5. In the program menu, choose option `2`, then enter:
+5. Enter the NFA details when the program asks.
 
    ```text
-   sample_ending_01.txt
+   3
+   2
+   0 1
+   0
+   1
+   2
+   4
+   0 0 0
+   0 1 0
+   0 0 1
+   1 1 2
    ```
 
 Using GCC:
@@ -115,11 +124,7 @@ Or run `build.bat`, which builds and starts the program:
 .\build.bat
 ```
 
-Then choose option `2` and enter:
-
-```text
-sample_ending_01.txt
-```
+Then enter the NFA details manually.
 
 You can also run the sample automatically:
 

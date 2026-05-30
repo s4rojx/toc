@@ -9,11 +9,9 @@ typedef struct {
     char alphabet[MAX_ALPHABET];
     int start_state;
 
-    /* Each DFA state represents one subset of NFA states. */
     StateSet *subsets;
     int *is_accept;
 
-    /* transitions[dfa_state * alphabet_size + symbol_index] = destination. */
     int *transitions;
 } DFA;
 

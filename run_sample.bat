@@ -10,9 +10,17 @@ if exist nfa_to_dfa.exe (
     echo Running sample input...
     echo.
     (
-        echo 2
-        echo sample_ending_01.txt
         echo 3
+        echo 2
+        echo 0 1
+        echo 0
+        echo 1
+        echo 2
+        echo 4
+        echo 0 0 0
+        echo 0 1 0
+        echo 0 0 1
+        echo 1 1 2
     ) | nfa_to_dfa.exe
 )
 
